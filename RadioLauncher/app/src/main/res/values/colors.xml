@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales del tema -->
+    <color name="primary">#1976D2</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_light">#42A5F5</color>
+    <color name="accent">#FF5722</color>
+    <color name="accent_light">#FF8A65</color>
+    
+    <!-- Colores de fondo -->
+    <color name="background_primary">#121212</color>
+    <color name="background_secondary">#1E1E1E</color>
+    <color name="background_tertiary">#2D2D2D</color>
+    <color name="background_card">#1F1F1F</color>
+    
+    <!-- Colores de superficie -->
+    <color name="surface">#1F1F1F</color>
+    <color name="surface_variant">#424242</color>
+    <color name="surface_inverse">#E0E0E0</color>
+    
+    <!-- Colores de texto -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_tertiary">#757575</color>
+    <color name="text_inverse">#000000</color>
+    
+    <!-- Colores de estado -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Colores específicos para radio -->
+    <color name="radio_frequency">#00E676</color>
+    <color name="radio_signal_strong">#4CAF50</color>
+    <color name="radio_signal_medium">#FF9800</color>
+    <color name="radio_signal_weak">#F44336</color>
+    <color name="radio_preset">#9C27B0</color>
+    
+    <!-- Colores para botones -->
+    <color name="button_primary">#1976D2</color>
+    <color name="button_secondary">#424242</color>
+    <color name="button_accent">#FF5722</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="button_disabled">#616161</color>
+    
+    <!-- Colores de navegación -->
+    <color name="nav_selected">#1976D2</color>
+    <color name="nav_unselected">#757575</color>
+    <color name="nav_background">#1E1E1E</color>
+    
+    <!-- Colores transparentes -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#80000000</color>
+    <color name="overlay">#99000000</color>
+    
+    <!-- Colores adicionales -->
+    <color name="divider">#424242</color>
+    <color name="ripple">#40FFFFFF</color>
+    <color name="scrim">#66000000</color>
+    
+    <!-- Colores para modo día (opcional) -->
+    <color name="day_background">#FAFAFA</color>
+    <color name="day_surface">#FFFFFF</color>
+    <color name="day_text_primary">#212121</color>
+    <color name="day_text_secondary">#757575</color>
+</resources>
