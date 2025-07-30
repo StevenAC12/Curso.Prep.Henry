@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".MainActivity">
+
+    <!-- Header con información del sistema -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_secondary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Información de tiempo -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="14:35" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:text="Lunes, 15 Enero" />
+
+        </LinearLayout>
+
+        <!-- Información del clima -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_weather_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_sunny"
+                android:tint="@color/warning"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                tools:text="25°C" />
+
+        </LinearLayout>
+
+        <!-- Indicadores de sistema -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_bluetooth_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_bluetooth"
+                android:tint="@color/info"
+                android:visibility="gone"
+                tools:ignore="UseAppTint"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_wifi_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_wifi"
+                android:tint="@color/success"
+                tools:ignore="UseAppTint" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenido principal -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout" />
+
+    <!-- Navegación inferior -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/nav_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Botón Radio -->
+        <LinearLayout
+            android:id="@+id/nav_radio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_radio_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_radio" />
+
+            <TextView
+                android:id="@+id/nav_radio_text"
+                style="@style/NavText"
+                android:text="@string/nav_radio" />
+
+        </LinearLayout>
+
+        <!-- Botón Media -->
+        <LinearLayout
+            android:id="@+id/nav_media"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_media_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_music" />
+
+            <TextView
+                android:id="@+id/nav_media_text"
+                style="@style/NavText"
+                android:text="@string/nav_media" />
+
+        </LinearLayout>
+
+        <!-- Botón Apps -->
+        <LinearLayout
+            android:id="@+id/nav_apps"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_apps_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_apps" />
+
+            <TextView
+                android:id="@+id/nav_apps_text"
+                style="@style/NavText"
+                android:text="@string/nav_apps" />
+
+        </LinearLayout>
+
+        <!-- Botón Teléfono -->
+        <LinearLayout
+            android:id="@+id/nav_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_phone_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/nav_phone_text"
+                style="@style/NavText"
+                android:text="@string/nav_phone" />
+
+        </LinearLayout>
+
+        <!-- Botón Navegación -->
+        <LinearLayout
+            android:id="@+id/nav_navigation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_navigation_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_navigation" />
+
+            <TextView
+                android:id="@+id/nav_navigation_text"
+                style="@style/NavText"
+                android:text="@string/nav_navigation" />
+
+        </LinearLayout>
+
+        <!-- Botón Configuración -->
+        <LinearLayout
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_settings_icon"
+                style="@style/NavIcon"
+                android:src="@drawable/ic_settings" />
+
+            <TextView
+                android:id="@+id/nav_settings_text"
+                style="@style/NavText"
+                android:text="@string/nav_settings" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

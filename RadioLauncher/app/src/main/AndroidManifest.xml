@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.radiolauncher">
+
+    <!-- Permisos necesarios para un launcher de radio -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- Características para dispositivos de radio/automotive -->
+    <uses-feature 
+        android:name="android.hardware.touchscreen" 
+        android:required="false" />
+    <uses-feature 
+        android:name="android.software.leanback" 
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.RadioLauncher"
+        tools:targetApi="31">
+        
+        <!-- Actividad principal del launcher -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.RadioLauncher.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape">
+            
+            <!-- Intent filters para que funcione como launcher -->
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+            
+            <!-- Intent filter adicional para launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad para configuración de radio -->
+        <activity
+            android:name=".RadioSettingsActivity"
+            android:exported="false"
+            android:label="@string/radio_settings"
+            android:theme="@style/Theme.RadioLauncher" />
+
+        <!-- Servicio para manejo de radio FM -->
+        <service
+            android:name=".service.RadioService"
+            android:exported="false" />
+
+        <!-- Receiver para eventos del sistema -->
+        <receiver
+            android:name=".receiver.SystemReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Provider para wallpapers -->
+        <provider
+            android:name=".provider.WallpaperProvider"
+            android:authorities="com.radiolauncher.wallpaper"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

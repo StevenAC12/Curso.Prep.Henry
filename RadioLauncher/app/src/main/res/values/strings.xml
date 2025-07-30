@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Radio Launcher</string>
+    <string name="radio_settings">Configuración de Radio</string>
+    
+    <!-- Navegación principal -->
+    <string name="nav_radio">Radio</string>
+    <string name="nav_media">Media</string>
+    <string name="nav_apps">Apps</string>
+    <string name="nav_settings">Configuración</string>
+    <string name="nav_phone">Teléfono</string>
+    <string name="nav_navigation">Navegación</string>
+    
+    <!-- Radio FM -->
+    <string name="radio_fm">FM</string>
+    <string name="radio_am">AM</string>
+    <string name="radio_frequency">Frecuencia</string>
+    <string name="radio_scan">Buscar</string>
+    <string name="radio_preset">Preset</string>
+    <string name="radio_volume">Volumen</string>
+    <string name="radio_mute">Silencio</string>
+    
+    <!-- Media Player -->
+    <string name="media_play">Reproducir</string>
+    <string name="media_pause">Pausar</string>
+    <string name="media_stop">Detener</string>
+    <string name="media_next">Siguiente</string>
+    <string name="media_previous">Anterior</string>
+    <string name="media_shuffle">Aleatorio</string>
+    <string name="media_repeat">Repetir</string>
+    <string name="media_no_media">No hay archivos de media</string>
+    
+    <!-- Aplicaciones -->
+    <string name="apps_all">Todas las Apps</string>
+    <string name="apps_recent">Recientes</string>
+    <string name="apps_favorites">Favoritas</string>
+    <string name="app_not_found">Aplicación no encontrada</string>
+    
+    <!-- Configuración -->
+    <string name="settings_display">Pantalla</string>
+    <string name="settings_audio">Audio</string>
+    <string name="settings_system">Sistema</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_brightness">Brillo</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_wallpaper">Fondo de pantalla</string>
+    
+    <!-- Bluetooth -->
+    <string name="bluetooth_connect">Conectar Bluetooth</string>
+    <string name="bluetooth_disconnect">Desconectar</string>
+    <string name="bluetooth_paired">Emparejado</string>
+    <string name="bluetooth_scanning">Buscando dispositivos...</string>
+    
+    <!-- Clima/Tiempo -->
+    <string name="weather_temperature">Temperatura</string>
+    <string name="weather_location">Ubicación</string>
+    <string name="time_format">HH:mm</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    
+    <!-- Mensajes -->
+    <string name="loading">Cargando...</string>
+    <string name="error_occurred">Ocurrió un error</string>
+    <string name="permission_required">Permiso requerido</string>
+    <string name="grant_permission">Otorgar permiso</string>
+    
+    <!-- Acciones -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    <string name="add">Agregar</string>
+    <string name="search">Buscar</string>
+</resources>
